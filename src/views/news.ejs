@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplyframe News</title
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Supplyframe News</h1>
+  <% articles.forEach((article, i) => { %>
+    <div style="display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 10px; margin: 10px; border: 1px solid black;">
+      <h2> <%- article.title %> </h2>
+      <p> <%- article.description %> </p>
+      <p style="color: rgba(0, 0, 0, 0.5);"> <%- article.source.name %> </p>
+      <p style="font-size: 10px; color: rgba(0, 0, 0, 0.5);"> <%- article.publishedAt %> </p>
+    </div>
+  <% }); %>
+</body>
+</html>
