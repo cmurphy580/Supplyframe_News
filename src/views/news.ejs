@@ -1,20 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supplyframe News</title
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Supplyframe News</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://kit.fontawesome.com/6ab3d69ed2.js" crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
 </head>
 <body>
-  <h1>Supplyframe News</h1>
-  <% articles.forEach((article, i) => { %>
-    <div style="display:flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 10px; margin: 10px; border: 1px solid black;">
-      <h2> <%- article.title %> </h2>
-      <p> <%- article.description %> </p>
-      <p style="color: rgba(0, 0, 0, 0.5);"> <%- article.source.name %> </p>
-      <p style="font-size: 10px; color: rgba(0, 0, 0, 0.5);"> <%- article.publishedAt %> </p>
+  <header class="header_nav">
+    <div class="header_logo">Supplyframe_News</div>
+    <div class="header_search"><i class="fa-solid fa-magnifying-glass"></i></div>
+  </header>
+  <section class="news_container">
+    <div class="landing_article" style="background-image: url(<%= articles[0].urlToImage %>)">
+      <div class="landing_text">
+        <div class="landing_author"><%- articles[0].source.name ? articles[0].source.name : articles[0].author %></div>
+        <div class="landing_title"><%- articles[0].title.split(" - ")[0] %></div>
+        <div class="landing_date"><%- new Date(articles[0].publishedAt).toDateString() %></div>
+      </div>
     </div>
-  <% }); %>
+    <div class="provider_menu">
+      <div class="provider_container"><div class="provider_text">Wall Street Journal</div></div>
+      <div class="provider_container"><div class="provider_text">Reuters</div></div>
+      <div class="provider_container"><div class="provider_text">BBC</div></div>
+      <div class="provider_container"><div class="provider_text">Al Jazeera</div></div>
+      <div class="provider_container"><div class="provider_text">Bleacher Report</div></div>
+      <div class="provider_container"><div class="provider_text">ESPN</div></div>
+      <div class="provider_container"><div class="provider_text">TechCrunch</div></div>
+      <div class="provider_container"><div class="provider_text">Wired</div></div>
+    </div>
+    <div class="news_wrapper">
+      <div class="top_title">Top Stories</div> 
+      <div class="news_container">
+        <div class="top_news">
+          <% for (var i = 1; i < 6; i++) { %>
+            <div class="top_article">
+              <% if (i % 2 == 1) { %>
+              <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
+              <div class="top_even_text">
+                <div class="black_bar"></div>
+                <div class="top_date"><%- articles[i].source.name %></div>
+                <div class="top_title"><%- articles[i].title.split(" - ")[0] %></div>
+                <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+                <div class="top_description"><%- articles[i].description %></div>
+              </div>
+              <% } else { %>
+                <div class="top_odd_text">
+                  <div class="black_bar"></div>
+                  <div class="top_date"><%- articles[i].source.name %></div>
+                  <div class="top_title" style="text-align: right;"><%- articles[i].title.split(" - ")[0] %></div>
+                  <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+                  <div class="top_description" style="text-align: right;"><%- articles[i].description %></div>
+                </div>
+                <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
+              <% } %>
+            </div>
+          <% } %>
+        </div>
+        <div class="additional_news">
+          <% for (var i = 6; i < 11; i++) { %>
+            <div class="additional_article">
+              <div class="black_bar"></div>
+              <div class="additional_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
+              <div class="additional_text">
+                <div class="additional_date"><%- articles[i].source.name %></div>
+                <div class="additional_title"><%- articles[i].title.split(" - ")[0] %></div>
+                <div class="additional_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+              </div>
+            </div>
+          <% } %>  
+        </div>
+      </div>
+    </div>
+    <nav class="pagination-container aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
 </body>
 </html>
