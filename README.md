@@ -7,6 +7,7 @@
 - View pages of the most current news.
 - Read news from a number of different providers.
 - Mobile responsive.
+- Cross platform compatibility.
 ## Tech
 - [NewsAPI](https://newsapi.org/) 
 - [EJS](https://ejs.co/)  
