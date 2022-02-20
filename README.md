@@ -30,4 +30,4 @@ cd Supplyframe_News
 npm i
 npm run test
 ```
-### _There 8 tests for a text formatting function called formatProviderText_
+- [There 8 tests for a text formatting function called formatProviderText]_
