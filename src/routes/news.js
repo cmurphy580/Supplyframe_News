@@ -1,17 +1,14 @@
 const express = require('express');
 const newsRouter = express.Router();
 const axios = require('axios');
-
-// MAKE ONE API CALL
-// const API_KEY = '0c224bd6f6fc43fb9e28d804bde31f57';
-// const news = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
+const formatProviderText = require('../../public/js/formatProviderText');
+const API_KEY = '0c224bd6f6fc43fb9e28d804bde31f57';
 
 newsRouter.get('', async (req, res) => {
   try 
   {
-    const API_KEY = '0c224bd6f6fc43fb9e28d804bde31f57';
     const news = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-    console.log(news.data.articles.length);
+    // console.log(news.data.articles.length); // 20
     res.render('news', { articles: news.data.articles, url: false });
   }
   catch(error) 
@@ -23,10 +20,9 @@ newsRouter.get('', async (req, res) => {
 newsRouter.get('/page/2', async (req, res) => {
   try 
   {
-    console.log(req.url);
-    const API_KEY = '0c224bd6f6fc43fb9e28d804bde31f57';
     const usNews = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
     const gbNews = await axios.get(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${API_KEY}`); 
+    // console.log(gbNews.data.articles.length); // 20
     let articles = [...usNews.data.articles, ...gbNews.data.articles];
     res.render('page_two', { articles, url: req.url });
   }
@@ -39,14 +35,10 @@ newsRouter.get('/page/2', async (req, res) => {
 newsRouter.get('/article/:id', async (req, res) => {
   try 
   {
-    const API_KEY = '0c224bd6f6fc43fb9e28d804bde31f57';    
     const usNews = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
     const gbNews = await axios.get(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${API_KEY}`); 
     let articles = [...usNews.data.articles, ...gbNews.data.articles];
     let id = parseInt(req.url.split("/")[2]); 
-    // console.log(req.url.split("/")[2]);
-    // console.log(id);
-    // console.log(news.data.articles[id]);
     res.render('article', { article: articles[id], url: req.url });
   }
   catch(error) 
@@ -70,31 +62,8 @@ newsRouter.get('/provider/:provider', async (req, res) => {
     }
     let provider = req.url.split("/")[2]; 
     const provider_image = provider_images[provider];
-    const API_KEY = '0c224bd6f6fc43fb9e28d804bde31f57'; 
+    provider = formatProviderText(provider);
     const provider_news = await axios.get(`https://newsapi.org/v2/top-headlines?sources=${provider}&apiKey=${API_KEY}`);
-
-    if (provider.includes("bbc"))
-    {
-      provider = provider.split("-");
-      provider = provider[0].toUpperCase() + " " + provider[1];
-    } 
-    else if (provider.includes("-"))
-    {
-      provider = provider.split("-").join(" ");
-      if (provider.includes("english"))
-      {
-        provider = provider.split("english").join("")
-      }
-    }
-    else if (provider === "espn")
-    {
-      provider = provider.toUpperCase();
-    }
-    else if (provider === "techcrunch")
-    {
-      provider = provider.split("cr");
-      provider = provider[0] + "Cr"+ provider[1];
-    }
     res.render('news_provider', { provider, provider_image, articles: provider_news.data.articles, url: req.url });
   }
   catch(error) 
@@ -102,8 +71,6 @@ newsRouter.get('/provider/:provider', async (req, res) => {
     console.log("Error: ", error.message);
   }
 });
-
-
 
 module.exports = newsRouter;
 
