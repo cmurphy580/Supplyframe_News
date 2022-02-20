@@ -25,7 +25,6 @@ npm start
 
 ## Running Jest Tests
 ```sh
-git clone https://github.com/cmurphy580/Supplyframe_News.git
 cd Supplyframe_News
 npm i
 npm run test
