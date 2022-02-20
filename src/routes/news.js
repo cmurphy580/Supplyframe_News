@@ -62,8 +62,8 @@ newsRouter.get('/provider/:provider', async (req, res) => {
     }
     let provider = req.url.split("/")[2]; 
     const provider_image = provider_images[provider];
+    let provider_news = await axios.get(`https://newsapi.org/v2/top-headlines?sources=${provider}&apiKey=${API_KEY}`);
     provider = formatProviderText(provider);
-    const provider_news = await axios.get(`https://newsapi.org/v2/top-headlines?sources=${provider}&apiKey=${API_KEY}`);
     res.render('news_provider', { provider, provider_image, articles: provider_news.data.articles, url: req.url });
   }
   catch(error) 
