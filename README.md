@@ -13,6 +13,7 @@
 - [Bootstrap](https://getbootstrap.com/)  
 - [JEST](https://jestjs.io/docs/getting-started)  
 - [Sass](https://sass-lang.com/guide)
+- [Vanilla Javascript](https://www.javascript.com/)
 
 
 ## Installation & Starting
