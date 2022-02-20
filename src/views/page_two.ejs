@@ -15,11 +15,11 @@
     <!--<div class="header_search"><i class="fa-solid fa-magnifying-glass"></i></div>-->
   </header>
   <section class="news_container">
-    <a class="landing_article"  href="/article/0" style="background-image: url(<%= articles[0].urlToImage %>)">
+    <a class="landing_article"  href="/article/11" style="background-image: url(<%= articles[11].urlToImage %>)">
       <div class="landing_text">
-        <div class="landing_author"><%- articles[0].source.name ? articles[0].source.name : articles[0].author %></div>
-        <div class="landing_title"><%- articles[0].title.split(" - ")[0] %></div>
-        <div class="landing_date"><%- new Date(articles[0].publishedAt).toDateString() %></div>
+        <div class="landing_author"><%- articles[11].source.name ? articles[11].source.name : articles[11].author %></div>
+        <div class="landing_title"><%- articles[11].title.split(" - ")[0] %></div>
+        <div class="landing_date"><%- new Date(articles[11].publishedAt).toDateString() %></div>
       </div>
     </a>
     <div class="provider_menu">
@@ -36,7 +36,7 @@
       <div class="top_title">Top Stories</div> 
       <div class="news_container">
         <div class="top_news">
-          <% for (var i = 1; i < 6; i++) { %>
+          <% for (var i = 12; i < 17; i++) { %>
             <a class="top_article" href="/article/<%= i %>">
               <% if (i % 2 == 1) { %>
               <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
@@ -48,20 +48,20 @@
                 <div class="top_description"><%- articles[i].description %></div>
               </div>
               <% } else { %>
-              <div class="top_odd_text">
-                <div class="black_bar"></div>
-                <div class="top_date"><%- articles[i].source.name %></div>
-                <div class="top_title" style="text-align: right;"><%- articles[i].title.split(" - ")[0] %></div>
-                <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
-                <div class="top_description" style="text-align: right;"><%- articles[i].description %></div>
-              </div>
-              <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
+                <div class="top_odd_text">
+                  <div class="black_bar"></div>
+                  <div class="top_date"><%- articles[i].source.name %></div>
+                  <div class="top_title" style="text-align: right;"><%- articles[i].title.split(" - ")[0] %></div>
+                  <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+                  <div class="top_description" style="text-align: right;"><%- articles[i].description %></div>
+                </div>
+                <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
               <% } %>
-            </a>
+              </a>
           <% } %>
         </div>
         <div class="additional_news">
-          <% for (var i = 6; i < 11; i++) { %>
+          <% for (var i = 17; i < 22; i++) { %>
             <a href="/article/<%= i %>" class="additional_article">
               <div class="black_bar"></div>
               <div class="additional_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
@@ -95,12 +95,12 @@
     if (window.scrollY > 60) 
     {
       header_nav.style.backgroundColor = "#1E1E1E";
-      header_nav.style.transition = "background-color 0.25s ease-in";
+      header_nav.style.transition = "background-color 0.15s ease-in";
     }
     else
     {
       header_nav.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
-      header_nav.style.transition = "background-color 0.25s ease-out";
+      header_nav.style.transition = "background-color 0.15s ease-out";
     }
   }); 
   const main_articles =  document.querySelectorAll(".top_article");

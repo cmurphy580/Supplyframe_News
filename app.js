@@ -14,12 +14,14 @@ app.use('/js', express.static(__dirname + 'public/js'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({ extended : true }));
+// app.use(bodyParser.urlencoded({ extended : true }));
 
 // Routes
 const newsRouter = require('./src/routes/news');
 app.use('/', newsRouter);
-
+app.use('/page/2', newsRouter);
+app.use('/article', newsRouter);
+app.use('/provider', newsRouter);
 
 // Port 3000
 app.listen(port, () => console.log(`Port: ${port}`));
