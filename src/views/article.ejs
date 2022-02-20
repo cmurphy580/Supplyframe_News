@@ -14,7 +14,7 @@
     <a href="/" class="header_logo">Supplyframe_News</a>
   </header>
   <section class="news_container">
-    <div class="landing_article" style="background-image: url(<%= article.urlToImage %>)">
+    <div class="landing_article" style="background-image: url(<%= article.urlToImage %>); height: 100vh !important;">
       <div class="landing_text">
         <div class="landing_author"><%- article.source.name ? article.source.name : article.author %></div>
         <div class="landing_title"><%- article.title.split(" - ")[0] %></div>
