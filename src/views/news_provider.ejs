@@ -30,31 +30,31 @@
       <a href="/provider/wired" class="provider_container"><div class="provider_text">Wired</div></a>
     </div>
     <div class="news_wrapper">
-      <div class="top_title" style="text-transform: capitalize">News From <%- provider %></div> 
+      <div class="top_title" style="text-transform: capitalize"><%- provider %></div> 
       <div class="provider_news_container">
         <div class="provider_news">
           <% for (var i = 0; i < articles.length; i++) { %>
-            <a class="top_article" href="/article/<%= i %>">
+            <div class="top_article">
               <% if (i % 2 == 1) { %>
               <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
-              <div class="top_even_text">
+              <a class="top_even_text" href="/article/<%= i %>">
                 <div class="black_bar"></div>
                 <div class="top_date"><%- articles[i].source.name %></div>
                 <div class="top_title"><%- articles[i].title.split(" - ")[0] %></div>
                 <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
                 <div class="top_description"><%- articles[i].description %></div>
-              </div>
+              </a>
               <% } else { %>
-                <div class="top_odd_text">
+                <a class="top_odd_text" href="/article/<%= i %>">
                   <div class="black_bar"></div>
-                  <div class="top_date"><%- articles[i].source.name %></div>
+                  <div class="top_date" style="text-align: right;"><%- articles[i].source.name %></div>
                   <div class="top_title" style="text-align: right;"><%- articles[i].title.split(" - ")[0] %></div>
-                  <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+                  <div class="top_source" style="text-align: right;"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
                   <div class="top_description" style="text-align: right;"><%- articles[i].description %></div>
-                </div>
+                </a>
                 <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
               <% } %>
-              </a>
+              </div>
           <% } %>
         </div>
       </div>

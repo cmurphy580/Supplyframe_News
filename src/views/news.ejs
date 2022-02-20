@@ -12,7 +12,6 @@
 <body>
   <header class="header_nav">
     <a href="/" class="header_logo">Supplyframe_News</a>
-    <!--<div class="header_search"><i class="fa-solid fa-magnifying-glass"></i></div>-->
   </header>
   <section class="news_container">
     <a class="landing_article"  href="/article/0" style="background-image: url(<%= articles[0].urlToImage %>)">
@@ -37,40 +36,40 @@
       <div class="news_container">
         <div class="top_news">
           <% for (var i = 1; i < 6; i++) { %>
-            <a class="top_article" href="/article/<%= i %>">
+            <div class="top_article">
               <% if (i % 2 == 1) { %>
               <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
-              <div class="top_even_text">
+              <a class="top_even_text" href="/article/<%= i %>">
                 <div class="black_bar"></div>
                 <div class="top_date"><%- articles[i].source.name %></div>
                 <div class="top_title"><%- articles[i].title.split(" - ")[0] %></div>
-                <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+                <div class="top_source"><%- articles[i].author ? articles[i].author.includes(",") ? articles[i].author.split(",")[0] + " et al.": articles[i].author : "Andy Weir"  %></div>
                 <div class="top_description"><%- articles[i].description %></div>
-              </div>
+              </a>
               <% } else { %>
-              <div class="top_odd_text">
+              <a class="top_odd_text" href="/article/<%= i %>">
                 <div class="black_bar"></div>
-                <div class="top_date"><%- articles[i].source.name %></div>
+                <div class="top_date" style="text-align: right;"><%- articles[i].source.name %></div>
                 <div class="top_title" style="text-align: right;"><%- articles[i].title.split(" - ")[0] %></div>
-                <div class="top_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
+                <div class="top_source" style="text-align: right;"><%- articles[i].author ? articles[i].author.includes(",") ? articles[i].author.split(",")[0] + " et al.": articles[i].author : "Andy Weir"  %></div>
                 <div class="top_description" style="text-align: right;"><%- articles[i].description %></div>
-              </div>
+              </a>
               <div class="top_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
               <% } %>
-            </a>
+            </div>
           <% } %>
         </div>
         <div class="additional_news">
           <% for (var i = 6; i < 11; i++) { %>
-            <a href="/article/<%= i %>" class="additional_article">
+            <div class="additional_article">
               <div class="black_bar"></div>
               <div class="additional_img" style="background-image: url(<%= articles[i].urlToImage %>)"></div>
-              <div class="additional_text">
+              <a class="additional_text" href="/article/<%= i %>">
                 <div class="additional_date"><%- articles[i].source.name %></div>
                 <div class="additional_title"><%- articles[i].title.split(" - ")[0] %></div>
-                <div class="additional_source"><%- articles[i].author ? articles[i].author : "Andy Weir" %></div>
-              </div>
-            </a>
+                <div class="additional_source"><%- articles[i].author ? articles[i].author.includes(",") ? articles[i].author.split(",")[0] + " et al.": articles[i].author : "Andy Weir"  %></div>
+              </a>
+            </div>
           <% } %>  
         </div>
       </div>
