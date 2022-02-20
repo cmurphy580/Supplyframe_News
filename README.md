@@ -1,6 +1,6 @@
 # Supplyframe_News
 ### _A news website for the Supplyframe Full Stack Intern Challenge_
-<img width="508" alt="supplyframe_news" src="https://user-images.githubusercontent.com/20917138/154825570-311ae690-1963-436c-b827-5db835592dc9.png">
+<img width="681" alt="supplyframe_news" src="https://user-images.githubusercontent.com/20917138/154829822-1aac14a9-a723-4cff-817e-af3d7412e1cb.png">
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ## Features
