@@ -39,6 +39,7 @@ newsRouter.get('/article/:id', async (req, res) => {
     const gbNews = await axios.get(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${API_KEY}`); 
     let articles = [...usNews.data.articles, ...gbNews.data.articles];
     let id = parseInt(req.url.split("/")[2]); 
+    // console.log(articles[id].url);
     res.render('article', { article: articles[id], url: req.url });
   }
   catch(error) 

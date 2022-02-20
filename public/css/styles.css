@@ -66,8 +66,8 @@ body .news_container .landing_article {
   height: 600px;
   box-shadow: inset 0px 0px 50px 50px rgba(0, 0, 0, 0.5);
   /*
-  &:before { // DOES NOT WORK !!! DOES NOT WORK !!! DOES NOT WORK !!!
-    content: "WORKED!";
+  &:before {
+    content: "";
     display: block;
     filter: brightness(100%);
   }
