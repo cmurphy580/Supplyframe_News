@@ -1,5 +1,5 @@
-## _Supplyframe_News_
-# A news website
+# _Supplyframe_News_
+### A news website
 <img width="508" alt="supplyframe_news" src="https://user-images.githubusercontent.com/20917138/154825570-311ae690-1963-436c-b827-5db835592dc9.png">
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
