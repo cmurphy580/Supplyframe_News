@@ -9,7 +9,8 @@
 - Mobile responsive.
 - Cross platform compatibility.
 ## Tech
-- [NewsAPI](https://newsapi.org/) 
+- [NewsAPI](https://newsapi.org/)
+- [Express](https://expressjs.com/) 
 - [EJS](https://ejs.co/)  
 - [Bootstrap](https://getbootstrap.com/)  
 - [JEST](https://jestjs.io/docs/getting-started)  
