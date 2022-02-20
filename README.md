@@ -16,6 +16,7 @@
 - [JEST](https://jestjs.io/docs/getting-started)  
 - [Sass](https://sass-lang.com/guide)
 - [Vanilla Javascript](https://www.javascript.com/)
+- [Git Version Control](https://git-scm.com/)
 
 
 ## Installation & Starting
