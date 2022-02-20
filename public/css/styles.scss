@@ -1,6 +1,5 @@
 @mixin theme($theme: #FAFBFC) { // blue === #1631DA; black === #1E1E1E; white === #FAFBFC;
   background-color: $theme;
-  // box-shadow: 0 0 1px rgba($theme, .25);
   color: #1E1E1E; 
   width: 100%;
   font-family: "Helvetica", "HelveticaNeueCyr" , "Roboto", "system-ui", "Segoe UI", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
@@ -19,7 +18,6 @@ body {
   }
   .header_nav {
     @include theme($theme: rgba(255, 255, 255, 0.0));
-    // background-color: rgba(255, 255, 255, 0.0);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -58,7 +56,6 @@ body {
       padding: 0 100px 0 100px;
       margin: 0; 
       height: 600px;
-      // filter: brightness(50%);
       box-shadow: inset 0px 0px 50px 50px rgba(0,0,0,0.5); // REMOVE !!!
       /*
       &:before { // DOES NOT WORK !!! DOES NOT WORK !!! DOES NOT WORK !!!
@@ -161,12 +158,6 @@ body {
             justify-content: flex-start;
             align-items: flex-start;
             cursor: pointer;
-            /*
-            &:hover {
-              transform: scale(1.01);
-              transition: transform 0.25s ease-in;
-            }
-            */
             .top_img {
               width: 50%;
               height: 100%;
@@ -252,12 +243,6 @@ body {
           height: 350px;
           width: 100%;
           cursor: pointer;
-          /*
-          &:hover {
-            transform: scale(1.01);
-            transition: transform 0.1s ease-in;
-          }
-          */
           .black_bar {
             height: 8px;
             width: 60px;
