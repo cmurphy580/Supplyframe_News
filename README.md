@@ -5,8 +5,8 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ## Features
 - View pages of the most current news.
-- Read news from a number of different sources.
--
+- Read news from a number of different providers.
+- Mobile responsive.
 ## Tech
 - [NewsAPI](https://newsapi.org/) 
 - [EJS](https://ejs.co/)  
