@@ -26,6 +26,7 @@ cd Supplyframe_News
 npm i
 npm start
 ```
+- The website should be running on http://localhost:3000/
 
 ## Running Jest Tests
 ```sh
