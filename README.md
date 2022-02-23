@@ -29,8 +29,11 @@ npm start
 - The website should be running on http://localhost:3000/
 
 ## Running Jest Tests
+- The first three directions are not necessary if already done in the "Installation & Starting" section.
 ```sh
+git clone https://github.com/cmurphy580/Supplyframe_News.git
 cd Supplyframe_News
+npm i
 npm run test
 ```
 - There 8 tests for a text formatting function called formatProviderText
